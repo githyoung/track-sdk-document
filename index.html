@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-Han">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>數據科技專家-蝙蝠移動</title>
+        <link rel="canonical" href="https://www.batmobile.com.tw/web_sdk_document/" />
+                <!-- Get the favicon -->
+        <link rel="icon" type="image/png" href="http://www.batmobile.com.tw/home/wp-content/uploads/2016/10/bat_logo_50x50px.png" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="數據科技專家-蝙蝠移動" />
+        <meta property="og:description" content="「蝙蝠移動」專注於提供行動數據系統解決方案，運用數據分析平台DMP，與客戶一起在混亂的會員資料中釐清秩序，讓>客戶能精準找出會員習性，並提供清晰的業務方向及行銷策略，進而轉換為高單價的訂單、提昇企業營業額，幫助客戶在龐大的會員資料中準確找出決策方向。" />
+        <meta property="og:url" content="https://www.batmobile.com.tw/home/" />
+        <meta property="og:site_name" content="蝙蝠移動" />
+        <meta property="og:image" content="https://www.batmobile.com.tw/home/wp-content/uploads/2014/10/cropped-background.jpg" />
+        <meta property="og:image:width" content="1500" />
+        <meta property="og:image:height" content="998" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content="「蝙蝠移動」專注於提供行動數據系統解決方案，運用數據分析平台DMP，與客戶一起在混亂的會員資料中釐清秩序，讓
+客戶能精準找出會員習性，並提供清晰的業務方向及行銷策略，進而轉換為高單價的訂單、提昇企業營業額，幫助客戶在龐大的會員資料中準確找出決策方向。" />
+        <meta name="twitter:image" content="https://www.batmobile.com.tw/home/wp-content/uploads/2014/10/cropped-background.jpg" />
+        <meta name="twitter:title" content="數據科技專家-蝙蝠移動" />
+        <meta name="author" content="James.Geng" />
+        <meta name="keywords" content="dmp,api,文件,線上文件,蝙蝠移動">
+        <meta name="description" content="蝙蝠移動WEB SDK文件">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+        <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<title>BatMobile WebSdk API Document </title>
+</head>
+<body class="stretched">
+	<div id="wrapper" class="clearfix">
+		<div id="top-bar">
+			<div class="container-fullwidth clearfix">
+				<div class="col-md-6 nopadding">
+					<p class="nobottommargin"><strong>Version:</strong> 2.8 | <strong>Release Date:</strong> 2018/01/30</p>
+				</div>
+			</div>
+		</div>
+		<header id="header">
+			<div id="header-wrap">
+				<div class="container-fullwidth clearfix">
+					<div id="logo" class="divcenter center">
+						<img src="images/logo.png" alt="" class="divcenter">
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap nopadding">
+				<div id="docs" class="container-fullwidth clearfix">
+					<div class="docs-navigation">
+						<ul>
+							<li><a href="#docs-start">開始安裝</a>
+								<ul>
+									<li><a href="#" data-scrollto="#docs-start-installation">全域網站js追蹤碼</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#docs-member">會員</a>
+								<ul>
+									<li><a href="#" data-scrollto="#userlogin">會員登入</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#docs-items">商品</a>
+								<ul>
+									<li><a href="#" data-scrollto="#singleitem">單一商品頁面</a></li>
+									<li><a href="#" data-scrollto="#shoppreview">結帳商品預覽</a></li>
+									<li><a href="#" data-scrollto="#shopfinished">結帳完成感謝頁面</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#docs-keywords">關鍵字</a>
+								<ul>
+									<li><a href="#" data-scrollto="#keywords">關鍵字</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#docs-filter">篩選事件</a>
+								<ul>
+									<li><a href="#" data-scrollto="#filter">篩選事件</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#docs-custom">自定義頁面</a>
+								<ul>
+									<li><a href="#" data-scrollto="#custompagename">自定義頁面</a></li>
+								</ul>
+							</li>
+
+							<li><a href="#docs-clickevent">事件(蒐集使用者行為)</a>
+								<ul>
+									<li><a href="#" data-scrollto="#click_button">事件</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="docs-content">
+						<div id="docs-start">
+							<div id="docs-start-installation" class="docs-content-inner">
+
+								<h4>全域網站追蹤碼</h4>
+								<p>請將以下 Javascript Code 複製貼上至網站內所有頁面，&lt;head&gt;&lt;/head&gt;之間。</p>
+
+<pre class="bottommargin">
+&lt;script&gt;
+var bat=bat||[];(function(){vare=["init","identify","track","trackLink","user"],t=function(e){return function(){bat.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+for(var n=0;n &lt;e.length;n++)bat[e[n]]=t(e[n])})(),bat.load=function(e,o){bat._endpoint=e;if(o){bat.init(o)};var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https://analytics.batmobile.com.tw/js/analytics.js");var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};bat.load("https://brain.batmobile.com.tw/collector/webevent/data");
+bat.user(<span class="color">"BAT-xxxxxx-x"</span>);//此為蝙蝠移動提供之客戶ID
+&lt;/script&gt;
+</pre>
+
+							</div>
+							<span class="label label-danger">Note</span>
+							<h4>
+							如果您的網頁頁面已安裝全域網站代碼，則以下個別追蹤碼，只需要加入使用範例事件碼即可，不需要再安裝一次全域網站代碼。</h4>
+<div class="line"></div>
+</div>
+
+						<div id="docs-member">
+							<div id="userlogin" class="docs-content-inner">
+								<h4>會員登入: bat.identify</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <th>是否必須提供</th>
+									  <th>說明</th>
+									  <th><span class="color">id</span> 為欲追蹤之會員帳號，以<span class="color">vip-user-1234</span> 為例</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>id</code></td>
+									  <td>string</td>
+									  <td>是</td>
+									  <td> &nbsp;id 為會員登入後其代表的一組帳號或是字串</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.identify('<span class="color">id</span>');
+</pre>
+									  </td>
+									</tr>
+							  <tr>
+                                                                          <td><code>name</code></td>
+                                                                          <td>string</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;name 為會員登入後額外形容其輪廓的名稱</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{name:<span class="color"> 'BAT'</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+  <tr>
+                                                                          <td><code>email</code></td>
+                                                                          <td>string</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;email 為會員登入後額外形容其輪廓的電子信箱</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{email:<span class="color"> 'email@email.com'</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+<tr>
+                                                                          <td><code>sex</code></td>
+                                                                          <td>string</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;sex 為會員登入後額外形容其輪廓的性別</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{sex:<span class="color"> 'male or female'</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+<tr>
+                                                                          <td><code>age</code></td>
+                                                                          <td>number</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;age 為會員登入後額外形容其輪廓的年齡</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{age:<span class="color"> 20</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+<tr>
+                                                                          <td><code>tel</code></td>
+                                                                          <td>number</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;tel 為會員登入後額外形容其輪廓的室內電話</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{tel:<span class="color"> 0225667789</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+<tr>
+                                                                          <td><code>mobile</code></td>
+                                                                          <td>number</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;mobile 為會員登入後額外形容其輪廓的手機號碼</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{mobile:<span class="color"> 0911222333</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td><code>address</code></td>
+                                                                          <td>string</td>
+									  									  <td>否</td>
+                                                                          <td> &nbsp;tel 為會員登入後額外形容其輪廓的地址</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{address:<span class="color"> '台北市松山區民權東路三段144號'</span>})
+</pre>
+                                                                          </td>
+                                                                        </tr>
+
+								  </tbody>
+								</table>								
+<p><span class="label label-danger">使用範例</span></p>
+<pre class="nobottommargin">
+bat.identify('vip-user-1234',{email: 'abc@example.com', age:30, sex: 'male'});
+</pre>
+							</div>
+
+							<div class="line"></div>
+						</div>
+						
+						<div id="docs-items">
+							<div id="singleitem" class="docs-content-inner">
+							  <h4>單一商品頁面: SingleItemNo</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <th>是否必須提供</th>
+									  <th>說明</th>
+									  <th>使用範例: <span class="color">variable</span> 為追蹤之變數值</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>SingleItemNo</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td>商品編號</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ SingleItemNo: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+									<tr>
+									  <td><code>name</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>商品名稱</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ name: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+									<tr>
+									  <td><code>price</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td>商品價格</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ price: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+									<tr>
+									  <td><code>category[i]<br>i為從1開始的正整數</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>商品分類<br>可能有大分類,中分類,小分類</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ category1: <span class="color">variable</span>,category2: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+										<tr>
+									  <td><code>label[i]<br>i為從1開始的正整數</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>商品標籤<br>可能有顏色或是size</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ label1: <span class="color">variable</span>,label2: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+									<tr>
+									  <td><code>content</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>商品內容</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ content: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+<p><span class="label label-danger">使用範例</span></p>
+<pre class="nobottommargin">
+bat.track('SingleItemNo',{ SingleItemNo:'12345678',category1:'大衣',label1:'黑色',name: '超值防寒大衣', content: '超值選擇,最後一天'});
+</pre>	
+
+							</div>
+								
+							<div class="line"></div>
+
+							<div id="shoppreview" class="docs-content-inner">
+
+								<h4>結帳商品預覽:shopPreviewItem</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <th>是否必須提供</th>
+									  <th>說明</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>itemNo</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品編號</td>
+									</tr>
+									<tr>
+									  <td><code>price</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品價格</td>
+									</tr>
+									<tr>
+									  <td><code>quantity</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品數量</td>
+									</tr>
+									<tr>
+									  <td><code>color</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品顏色</td>
+									</tr>
+									<tr>
+									  <td><code>size</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品尺寸</td>
+									</tr>
+									<tr>
+									  <td><code>g</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品公克重量</td>
+									</tr>
+									<tr>
+									  <td><code>discount</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品折扣價格</td>
+									</tr>
+									<tr>
+									  <td><code>total</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品總金額</td>
+									</tr>
+									<tr>
+									  <td><code>shippingCost</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品運費</td>
+									</tr>
+									<tr>
+									  <td><code>shippingWay</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td> &nbsp;商品運貨方式</td>
+									</tr>
+								  </tbody>
+								</table>
+					<p><span class="label label-danger">PHP程式範例:參數為 itemNo，price，quantity</span></p>
+					<pre class="nobottommargin">
+&lt;?php
+$shopPreviewItem = array( ‭ //‬建立商品的Array
+                array('itemNo=>'SUM0001',  'price'=>'980', 'quantity'=>'1'),
+                array('itemNo'=>'SUM0002',  'price'=>'450', 'quantity'=>'1')
+        );
+ ?&gt;  
+
+var shopPreviewItem = &lt;?php echo json_encode($shopPreviewItem); ?&gt;;
+for (var key in shopPreviewItem) {
+  var obj = shopPreviewItem[key];
+  bat.track('shopPreviewItem',{ itemNo:<span class="color">obj['itemNo']</span>,price: <span class="color">obj['price']</span>, quantity:<span class="color">obj['quantity']</span> }); 
+}  
+</pre>
+<p></p>
+<p><span class="label label-danger">Javascript程式範例:參數為itemNo，price，quantity</span> </p>
+					<pre class="nobottommargin">
+
+var shopPreviewItem = [ ‭//‬建立商品的Array
+       {itemNo: 'SUM0001',price: '980',quantity:'1'},
+       {itemNo: 'SUM0002',price: '450',quantity:'1'},
+       {itemNo: 'SUM0003',price: '830',quantity:'1'}]
+
+for (var key in shopPreviewItem) {
+  var obj = shopPreviewItem[key];
+  bat.track('shopPreviewItem',{ itemNo:<span class="color">obj['itemNo']</span>,price: <span class="color">obj['price']</span>, quantity:<span class="color">obj['quantity']</span> });
+‭ ‬} ‭
+</pre>
+
+
+							</div>
+							
+							<div class="line"></div>
+							
+							<div id="shopfinished" class="docs-content-inner">
+
+								<h4>結帳完成感謝頁面:shopFinished</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <th>是否必須提供</th>
+									  <th>說明</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>itemNo</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品編號</td>
+									</tr>
+									<tr>
+									  <td><code>price</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品價格</td>
+									</tr>
+									<tr>
+									  <td><code>quantity</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品數量</td>
+									</tr>
+									<tr>
+									  <td><code>color</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品顏色</td>
+									</tr>
+									<tr>
+									  <td><code>size</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品尺寸</td>
+									</tr>
+									<tr>
+									  <td><code>g</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品公克重量</td>
+									</tr>
+									<tr>
+									  <td><code>discount</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品折扣價格</td>
+									</tr>
+									<tr>
+									  <td><code>total</code></td>
+									  <td>number</td>
+									  <td>是</td>
+									  <td> &nbsp;商品總金額</td>
+									</tr>
+									<tr>
+									  <td><code>shippingCost</code></td>
+									  <td>number</td>
+									  <td>否</td>
+									  <td> &nbsp;商品運費</td>
+									</tr>
+									<tr>
+									  <td><code>shippingWay</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td> &nbsp;商品運貨方式</td>
+									</tr>
+								  </tbody>
+								</table>
+			<p><span class="label label-danger">PHP程式範例:參數為itemNo，price，quantity</span></p>
+					<pre class="nobottommargin">
+&lt;?php
+$shopPreviewItem = array( ‭ //‬建立商品的Array
+                array('itemNo'=>'SUM0001',  'price'=>'980', 'quantity'=>'1'),
+                array('itemNo'=>'SUM0002',  'price'=>'450', 'quantity'=>'1')
+        );
+ ?&gt;  
+
+var shopPreviewItem = &lt;?php echo json_encode($shopPreviewItem); ?&gt;;
+for (var key in shopPreviewItem) {
+  var obj = shopPreviewItem[key];
+  bat.track('shopFinished',{ itemNo:<span class="color">obj['itemNo']</span>,price: <span class="color">obj['price']</span>, quantity:<span class="color">obj['quantity']</span> }); 
+}  
+</pre>
+<p></p>
+<p><span class="label label-danger">Javascript程式範例:參數為itemNo，price，quantity</span> </p>
+					<pre class="nobottommargin">
+
+var shopFinished = [ ‭//‬建立商品的Array
+       {itemNo: 'SUM0001',price: '980',quantity:'1'},
+       {itemNo: 'SUM0002',price: '450',quantity:'1'},
+       {itemNo: 'SUM0003',price: '830',quantity:'1'}]
+
+for (var key in shopFinished) {
+  var obj = shopFinished[key];
+  bat.track('shopFinished',{ itemNo:<span class="color">obj['itemNo']</span>,price: <span class="color">obj['price']</span>, quantity:<span class="color">obj['quantity']</span> });
+‭ ‬} ‭
+</pre>
+							</div>
+							<div class="line"></div>
+					</div>
+						
+						<div id="docs-keywords">
+							<div id="keywords" class="docs-content-inner">
+								<h4>關鍵字:Keywords</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <th>是否必須提供</th>
+									  <th>說明</th>
+									  <th>使用範例: <span class="color">variable</span> 為變數值</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>keyword[i]<br>i為從1開始的正整數</code></td>
+									  <td>string</td>
+									  <td>是</td>
+									  <td> 搜尋結果的值</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('Keywords',{ keyword1: <span class="color">variable</span>});
+</pre>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+<p><span class="label label-danger">使用範例</span></p>
+<pre class="nobottommargin">
+bat.track('keywords',{ keyword1: <span class="color">variable</span>,keyword2: <span class="color">variable</span>});
+</pre>
+
+							</div>
+							<div class="line"></div>
+						</div>
+						
+						<div id="docs-filter">
+							<div id="filter" class="docs-content-inner">
+								
+								<h4>篩選事件:Filter</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <td>是否必須提供</td>
+									  <th>說明</th>
+									  <th>使用範例: <span class="color">variable</span> 為篩選之變數值</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>category[i]<br>i為從1開始的正整數</code></td>
+									  <td>string</td>
+									  <td>是</td>
+									  <td>篩選之分類值</td>
+									  									  <td>
+<pre class="nobottommargin">
+bat.track('Filter', { category1: <span class="color">variable</span> });
+</pre>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+<p><span class="label label-danger">使用範例</span></p>
+<pre class="nobottommargin">
+bat.track('Filter',{ category1: <span class="color">variable</span> ,category2: <span class="color">variable</span> });
+</pre>
+
+							</div>
+							<div class="line"></div>
+						</div>
+				<div id="docs-custom">
+     <div id="custompagename" class="docs-content-inner">
+                                                                <h4>自定義頁面:CustomValue</h4>
+                                                                <table class="table table-bordered">
+                                                                  <thead>
+                                                                        <tr>
+                                                                          <th>名稱</th>
+                                                                          <th>值類型</th>
+									  									  <td>是否必須提供</td>
+                                                                          <th>說明</th>
+                                                                          <th>使用範例: <span class="color">variable</span> 為變數值</th>
+                                                                        </tr>
+                                                                  </thead>
+                                                                  <tbody>
+  <tr>
+                                                                          <td><code>title</code></td>
+                                                                          <td>string</td>
+									 									  <td>是</td>
+                                                                          <td> 該頁面的自定義標題值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ title: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+  <tr>
+                                                                          <td><code>content</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義內容值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ content: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+  <tr>
+                                                                          <td><code>time</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義時間值<br>時間格式為24h</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ time: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+ <tr>
+                                                                          <td><code>category[i]<br>i為從1開始的正整數</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義分類值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ category1: <span class="color">variable</span>,category2: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+ <tr>
+                                                                          <td><code>label[i]<br>i為從1開始的正整數</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義標籤值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ label1: <span class="color">variable</span>,label2: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+        <tr>
+                                                                          <td><code>value</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ value: <span class="color">variable</span>});
+</pre>
+</tr>
+                                                                          </td>
+         <tr>
+                                                                          <td><code>goal</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義目標值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ goal: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+      <tr>
+                                                                          <td><code>remark</code></td>
+                                                                          <td>string</td>
+									 									  <td>否</td>
+                                                                          <td> 該頁面的自定義備註值</td>
+                                                                                                                                                  <td>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ remark: <span class="color">variable</span>});
+</pre>
+                                                                          </td>
+                                                                        </tr>
+
+                                                                  </tbody>
+                                                                </table>
+<p><span class="label label-danger">使用範例</span></p>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ title: 'LV 名牌包',content: '9999 元',time: '2017/01/01'});
+</pre>
+<p></p>
+<pre class="nobottommargin">
+bat.track('CustomValue',{ title: 'LV 名牌包',content: '9999 元',time: '2017/01/01 23:00',category1:'外套',catetory2:'大衣'});
+</pre>
+                                                        </div>
+                                                        <div class="line"></div>
+                                                    </div>
+
+
+						<div id="docs-clickevent">
+
+							<div id="click_button" class="docs-content-inner">
+
+								<h4>按鈕點擊事件:buttonClick</h4>
+								<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>名稱</th>
+									  <th>值類型</th>
+									  <th>是否必須提供</th>
+									  <th>說明</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td><code>category</code></td>
+									  <td>string</td>
+									  <td>是</td>
+									  <td>固定為<span class="color"> event</span></td>
+									</tr>
+									<tr>
+									  <td><code>currentPage</code></td>
+									  <td>string</td>
+									  <td>是</td>
+									  <td>按鈕事件的當頁名稱</td>
+									</tr>
+									<tr>
+									  <td><code>buttonName</code></td>
+									  <td>string</td>
+									  <td>是</td>
+									  <td>通常是用户與之互動的按鈕名稱（例如 'facebook'）</td>
+									</tr>
+									<tr>
+									  <td><code>clickType</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>互動類型（例如 '播放影片' / 暫停影片）</td>
+									</tr>
+									<tr>
+									  <td><code>position</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>按鈕的位置進行分類 固定為（'center / top / bottom / left / right'）</td>
+									</tr>
+									<tr>
+									  <td><code>value</code></td>
+									  <td>string</td>
+									  <td>否</td>
+									  <td>與事件相關的值(自定義值)</td>
+									</tr>
+								  </tbody>
+								</table>
+<p>
+	<h4>buttonName一般規範：若您的按鈕屬於下列表格內類別請使用表格內的的buttonName以利資料分析</h4>
+	
+				<table class="table table-bordered">
+								  <thead>
+									<tr>
+									  <th>類別</th>
+									  <th>buttonName 名稱</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>facebook</td>
+									  <td>facebook_button</td>
+									</tr>
+									<tr>
+									  <td>Instagram</td>
+									  <td>instagram_button</td>
+									</tr>
+									<tr>
+									  <td>Twitter</td>
+									  <td>twitter_button</td>
+									</tr>
+									<tr>
+									  <td>Tab按鈕</td>
+									  <td>tab_button</td>
+									</tr>
+									<tr>
+									  <td>折疊按鈕</td>
+									  <td>collapse_button</td>
+									</tr>
+									<tr>
+									  <td>大圖輪播左右按鈕</td>
+									  <td>left_right_button</td>
+									</tr>
+									<tr>
+									  <td>大圖輪播導航點按鈕</td>
+									  <td>dots_button</td>
+									</tr>
+									<tr>
+									  <td>影片播放按鈕</td>
+									  <td>video_button</td>
+									</tr>
+									<tr>
+									  <td>選擇事項按鈕</td>
+									  <td>choose_item_button</td>
+									</tr>
+									<tr>
+									  <td>加到購物車按鈕</td>
+									  <td>addtocart_button</td>
+									</tr>
+									<tr>
+									  <td>直接購買按鈕</td>
+									  <td>buy_button</td>
+									</tr>
+									<tr>
+									  <td>選擇事項按鈕</td>
+									  <td>choose_item_button</td>
+									</tr>
+									<tr>
+									  <td>篩選按鈕</td>
+									  <td>filter_selection_button</td>
+									</tr>
+									<tr>
+									  <td>寄送email按鈕</td>
+									  <td>email_button</td>
+									</tr>
+									<tr>
+									  <td>表單送出按鈕</td>
+									  <td>form_button</td>
+									</tr>
+									<tr>
+									  <td>點擊步驟按鈕</td>
+									  <td>step_button</td>
+									</tr>
+									<tr>
+									  <td>列印按鈕</td>
+									  <td>print_button</td>
+									</tr>
+									<tr>
+									  <td>點擊小提醒/tips按鈕</td>
+									  <td>info_button</td>
+									</tr>
+									<!-- <tr>
+									  <td>滑鼠Hover事件</td>
+									  <td>mouse_hover</td>
+									</tr>
+									<tr>
+									  <td>滑鼠滾輪事件</td>
+									  <td>wheel</td>
+									</tr>
+									<tr>
+									  <td>滑鼠拖曳事件</td>
+									  <td>drag</td>
+									</tr> -->
+								  </tbody>
+								</table>
+
+
+</p>
+								<p><span class="label label-danger">使用範例以Javascript為例</span></p>
+<pre class="nobottommargin">
+var linkelement = document.querySelector('element');//取得點擊元素
+linkelement.addEventListener('click', function(e) { //建立監聽事件
+   var linkname = e.target.innerText; // 點擊目標元素文字
+   bat.track('buttonClick',{category:'event',currentPage:'購買商品頁面',buttonName:<span class="color"> linkname</span>});
+});
+</pre>
+
+							<p></p>	<p><span class="label label-danger">使用範例以Jquery為例</span></p>
+<pre class="nobottommargin">
+$('.element').on('click',function(e){ // 點擊事件
+   var linkname = $(this).text(); // 定義目標元素名稱
+   bat.track('buttonClick',{category:'event',currentPage:'購買商品頁面',buttonName: <span class="color">linkname</span>});
+});
+</pre>
+
+							</div>
+							<div class="line"></div>
+						   </div>
+						</div>
+					  </div>
+					</div>
+				</div>
+				<script>
+					jQuery(document).ready( function($){
+
+						$( "#docs" ).tabs({
+							show: { effect: "fade", duration: 400 },
+							activate:function(event,ui){
+								$('html,body').stop(true).animate({
+									'scrollTop': $('.docs-content').offset().top
+								}, 750, 'easeOutQuad');
+							}
+						});
+
+						$('#icons-filter').typing({
+							stop: function (event, $elem) {
+								var filterValue = $elem.val(),
+									count = 0;
+
+								if( $elem.val() ) {
+
+									$(".docs-icons li").each(function(){
+										if ($(this).text().search(new RegExp(filterValue, "i")) < 0) {
+											$(this).fadeOut();
+										} else {
+											$(this).show();
+											count++
+										}
+									});
+
+									if( count > 0 ) {
+										$('#icons-filter-result').html('<strong>' + count + '</strong> Icons Found.');
+									} else {
+										$('#icons-filter-result').html('No Icons Found.');
+									}
+
+								} else {
+									$(".docs-icons li").show();
+									$('#icons-filter-result').html('');
+								}
+
+								count = 0;
+							},
+							delay: 500
+						});
+
+					});
+				</script>
+			</div>
+		</section>
+		<footer id="footer">
+			<div id="copyrights">
+				<div class="container-fullwidth clearfix">
+					<div class="col-md-12 nopadding center">
+						Copyrights &copy; 2017 All Rights Reserved by BatMobiles<br>
+					</div>
+				</div>
+			</div><!-- #copyrights end -->
+		</footer><!-- #footer end -->
+	</div><!-- #wrapper end -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+	<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</html>
